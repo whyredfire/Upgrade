@@ -3,6 +3,7 @@
 - [ ] Make frontend and backend
 - [ ] Find a better movie search system
 - [ ] Make model faster
+- [ ] Add feature to store vectorized values
 
 
 
