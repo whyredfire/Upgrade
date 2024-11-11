@@ -6,7 +6,7 @@ async def if_exists(movie: str):
         reader = csv.DictReader(movies)
 
         for index, row in enumerate(reader):
-            if row["title"] == movie:
+            if movie in row["title"]:
                 return index, row
 
     return False
