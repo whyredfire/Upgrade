@@ -1,18 +1,14 @@
 # To do 
 
-- [ ] Make frontend and backend
-- [ ] Find a better movie search system
+- [ ] Make frontend 
+- [x] Make backend
+- [ ] Implement fuzzy search for movies
 - [ ] Make model faster
 - [ ] Add feature to store vectorized values
 
 
 
 ```bash
-cd spider
-scrapy crawl moviebot
-```
-
-```bash
-cd model 
-python main.py
+pip install -r app/requirements.txt
+fastapi dev app/main.py
 ```
