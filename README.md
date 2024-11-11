@@ -3,7 +3,7 @@
 - [ ] Make frontend 
 - [x] Make backend
 - [ ] Implement fuzzy search for movies
-- [ ] Make model faster
+- [x] Make model faster
 - [ ] Add feature to store vectorized values
 
 
