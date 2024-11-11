@@ -28,7 +28,7 @@ movie_factors = svd.components_.T
 
 
 def get_hybrid_recommendations(
-    user_id, movie_id, content_weight=0.5, collaborative_weight=0.5
+    movie_id, user_id=0, content_weight=0.5, collaborative_weight=0.5
 ):
     collaborative_score = np.dot(user_factors[user_id], movie_factors[movie_id])
 
