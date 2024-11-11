@@ -18,8 +18,7 @@ tags_matrix = mlb_tags.fit_transform(df["tags"])
 tfidf = TfidfVectorizer(stop_words="english")
 summary_matrix = tfidf.fit_transform(df["summary"].fillna(""))
 
-content_matrix = np.hstack(
-    (genres_matrix, tags_matrix, summary_matrix.toarray()))
+content_matrix = np.hstack((genres_matrix, tags_matrix, summary_matrix.toarray()))
 content_similarity = cosine_similarity(content_matrix, content_matrix)
 
 user_movie_matrix = np.random.rand(100, len(df))
@@ -31,8 +30,7 @@ movie_factors = svd.components_.T
 def get_hybrid_recommendations(
     user_id, movie_id, content_weight=0.5, collaborative_weight=0.5
 ):
-    collaborative_score = np.dot(
-        user_factors[user_id], movie_factors[movie_id])
+    collaborative_score = np.dot(user_factors[user_id], movie_factors[movie_id])
 
     content_score = content_similarity[movie_id]
 
@@ -42,8 +40,3 @@ def get_hybrid_recommendations(
 
     recommended_indices = hybrid_scores.argsort()[::-1][:10]
     return df["title"].iloc[recommended_indices]
-
-
-user_id = 0
-movie_id = 72
-print(get_hybrid_recommendations(user_id, movie_id))
